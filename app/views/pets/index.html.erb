@@ -6,32 +6,36 @@
   <div class="cards-grid-list mt-5 mb-5">
 
     <% @pets.each do |pet| %>
-    <%= link_to pet_path(pet) do %>
+      <%= link_to pet_path(pet) do %>
       <div id="cards-list" class="card">
         <div>
-        <%= cl_image_tag pet.photo.key, id:"img-pet-list"%>
+          <% if pet.photo.attached? %>
+            <%= cl_image_tag pet.photo.key, id:"img-pet-list"%>
+          <% else %>
+            <p>No photo<p>
+          <% end %>
         </div>
 
-          <div class="card-body">
+        <div class="card-body">
+          <div class="card-text d-flex justify-content-between">
+            <h3 class="card-title"> <%= pet.name %> </h3>
             <div class="card-text d-flex justify-content-between">
-              <h3 class="card-title"> <%= pet.name %> </h3>
-              <div class="card-text d-flex justify-content-between">
               <%= cl_image_tag pet.owner.photo.key, id:"img-user-list"%>
-              </div>
             </div>
+          </div>
 
-            <div class="card-subtitle mb-2 text-muted">
+          <div class="card-subtitle mb-2 text-muted">
             <%= pet.species %>
-            </div>
-            <div class="card-text d-flex justify-content-between">
+          </div>
+          <div class="card-text d-flex justify-content-between">
             <%= pet.age %> an(s)
-            <div class="d-flex flex-row-reverse"><%= pet.price_per_day %> €/jour </div>
-            </div>
+          <div class="d-flex flex-row-reverse"><%= pet.price_per_day %> €/jour </div>
+          </div>
         </div>
       </div>
       <% end %>
     <% end %>
-
   </div>
-
 </div>
+
+
