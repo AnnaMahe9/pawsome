@@ -19,12 +19,12 @@ file = File.open(Rails.root.join("db/seeds/images/users/archibald.jpg"))
 archibald.photo.attach(io:file, filename: "archibald.jpg", content_type: "image/jpeg")
 
 georges = User.create!(username:"supergeorgie", email:"georges.dupont@gmail.com", password:"password")
-file = File.open(Rails.root.join("db/seeds/images/users/georges.jpg"))
-georges.photo.attach(io:file, filename: "georges.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("db/seeds/images/users/georges.png"))
+georges.photo.attach(io:file, filename: "georges.png", content_type: "image/png")
 
 celina = User.create!(username:"sissilovespets", email:"ilovepets@aol.com", password:"password")
-file = File.open(Rails.root.join("db/seeds/images/users/celina.jpg"))
-celina.photo.attach(io:file, filename: "celina.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("db/seeds/images/users/celina.png"))
+celina.photo.attach(io:file, filename: "celina.png", content_type: "image/png")
 
 
 #pets
@@ -48,37 +48,37 @@ file = File.open(Rails.root.join("db/seeds/images/pets/bibi.jpg"))
 bibi.photo.attach(io:file, filename: "bibi.jpg", content_type: "image/jpeg")
 
 benedict = Pet.create!(name:"Benedict", species:"Amphibien", description:"Benedict est une magnifique grenouille taureau, un peu baveuse mais surtout remplie d'amour (et d'humour !), elle illuminera vos journées par ses grands sourires", price_per_day:25, age: 8, owner: georges)
-file = File.open(Rails.root.join("db/seeds/images/pets/benedict"))
+file = File.open(Rails.root.join("db/seeds/images/pets/benedict.jpg"))
 benedict.photo.attach(io:file, filename: "benedict.jpg", content_type: "image/jpeg")
 
 batman = Pet.create!(name: "Batman", species:"Mammiphères", description:"Batman est un peu taciturne, et pas très actif en journée. Je pensais avoir acheté une souris sans cheveux, mais je ne regrette pas mon erreur ! Batman ne vous dérangera pas, et vous tiendra compagnie pendant vos nuits d'été.", price_per_day: 12, owner:georges)
-file = File.open(Rails.root.join("db/seeds/images/pets/batman"))
+file = File.open(Rails.root.join("db/seeds/images/pets/batman.jpg"))
 batman.photo.attach(io:file, filename: "batman.jpg", content_type: "image/jpeg")
 
 #archibald
 fifi = Pet.create!(name: "Fifi", species: "Oiseau", description: "Fifi est mon corbeau adoptif. Il est tombé dans mon jardin un soir de pleine lune il y a 2 ans et depuis une histoire d'amour s'est créée entre nous. Je l'ai soigné, et il ne m'a plus jamais quitté. Il est très gentil mais attention aux coups de bec... Je souhaite le louer car je pars en vacances la semaine prochaine et ils n'acceptent pas les corbeaux de compagnie dans l'avion. Prix non négotiable.", price_per_day:3, age:6, owner: archibald)
-file = File.open(Rails.root.join("db/seeds/images/pets/fifi"))
+file = File.open(Rails.root.join("db/seeds/images/pets/fifi.jpg"))
 fifi.photo.attach(io:file, filename: "fifi.jpg", content_type: "image/jpeg")
 
 ludovic = Pet.create!(name:"Ludovic", species:"Poisson", description:"Ludovic est mon requin-lutin. Je l'ai acheté sur un site internet l'année dernière, mais ils avaient oublié de me prévenir qu'il était un peu encombrant et très affamé... Aujourd'hui j'ai besoin d'un peu d'argent car j'ai tout dépensé dans l'éducation de Ludovic... Vous verrez il est super gentil (je ne mettrais quand même pas mes mains dans l'aquarium si j'étais vous :)", price_per_day:27, age:9, owner: archibald)
-file = File.open(Rails.root.join("db/seeds/images/pets/ludovic"))
+file = File.open(Rails.root.join("db/seeds/images/pets/ludovic.jpg"))
 ludovic.photo.attach(io:file, filename: "ludovic.jpg", content_type: "image/jpeg")
 
 leon = Pet.create!(name:"Léon", species:"Insecte", description:" J'ai trouvé Léon un beau soir d'été. Il chantait dans mes oreilles sa douce mélodie. Au début, j'ai voulu le tuer mais je n'ai pas réussi et nous sommes devenus très amis. Je le mets à louer car j'ai l'impression qu'il a besoin de prendre du temps un peu de son côté, sans moi... Nous nous sommes disputés et je pense que ça lui fera du bien. Alors voilà je vous confie Léon mon moustique mais pour une durée limitée !", price_per_day:77, age:1, owner: archibald)
-file = File.open(Rails.root.join("db/seeds/images/pets/leon"))
-leon.photo.attach(io:file, filename: "leon.jpg", content_type: "image/jpeg")
+file = File.open(Rails.root.join("db/seeds/images/pets/leon.png"))
+leon.photo.attach(io:file, filename: "leon.png", content_type: "image/png")
 
 #célina
 fridha = Pet.create!(name: "Fridha Khalo", species: "Reptile", description: "Fridha est une jeune crocodile passionée et débordante de vie. Je l'ai recueillie quand elle avait 6 mois et c'est devenue une adorable petite crocodile. Attention, elle n'aime pas beaucoup les hommes", price_per_day:80, age: 6, owner: celina)
-file = File.open(Rails.root.join("db/seeds/images/pets/fridha"))
+file = File.open(Rails.root.join("db/seeds/images/pets/fridha.jpg"))
 fridha.photo.attach(io:file, filename: "fridha.jpg", content_type: "image/jpeg")
 
 simone = Pet.create!(name: "Simone", species: "Insecte", description: "Simone est ma tarantule. Je l'ai sauvée des mauvais traitements de son ancien humain et depuis, je lui réapprends à faire confiance à l'homme. C'est pourquoi je vous propose de lui montrer de l'amour en la louant pendant quelque temps. Elle est très affectueuse et adore se nicher dans le cou!", price_per_day:45, age: 4, owner: celina)
-file = File.open(Rails.root.join("db/seeds/images/pets/simone"))
+file = File.open(Rails.root.join("db/seeds/images/pets/simone.jpg"))
 simone.photo.attach(io:file, filename: "simone.jpg", content_type: "image/jpeg")
 
 jerome = Pet.create!(name: "Jérôme", species: "Reptile", description:"J'ai eu Jérôme par un hasard de dingue: ce boa est remonté dans mes toilettes ! Depuis il ne quitte plus ma salle de bain, je cherche donc à le sociabiliser avec d'autres animaux.", price_per_day: 34, age: 4, owner: celina)
-file = File.open(Rails.root.join("db/seeds/images/pets/jerome"))
+file = File.open(Rails.root.join("db/seeds/images/pets/jerome.jpg"))
 jerome.photo.attach(io:file, filename: "jerome.jpg", content_type: "image/jpeg")
 #bookings
 puts "Creating bookings"
