@@ -6,7 +6,7 @@
   <div class="cards-grid-list mt-5 mb-5">
 
     <% @pets.each do |pet| %>
-      <%= link_to pet_path(pet) do %>
+      <%= link_to pet_path(pet), class:"card-link" do %>
       <div id="cards-list" class="card">
         <div>
           <% if pet.photo.attached? %>
@@ -37,5 +37,3 @@
     <% end %>
   </div>
 </div>
-
-
