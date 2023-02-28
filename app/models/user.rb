@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :pets, foreign_key: :owner_id
   has_many :bookings, foreign_key: :renter_id
   has_many :owner_bookings, through: :pets, source: :bookings
+  has_one_attached :photo
 end

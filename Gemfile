@@ -18,6 +18,7 @@ gem "sassc-rails"
 
 # Own gems
 gem "autoprefixer-rails"
+gem "cloudinary"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "devise"
