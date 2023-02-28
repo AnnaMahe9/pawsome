@@ -51,7 +51,7 @@ benedict = Pet.create!(name:"Benedict", species:"Amphibien", description:"Benedi
 file = File.open(Rails.root.join("db/seeds/images/pets/benedict.jpg"))
 benedict.photo.attach(io:file, filename: "benedict.jpg", content_type: "image/jpeg")
 
-batman = Pet.create!(name: "Batman", species:"Mammiphère", description:"Batman est un peu taciturne, et pas très actif en journée. Je pensais avoir acheté une souris sans cheveux, mais je ne regrette pas mon erreur ! Batman ne vous dérangera pas, et vous tiendra compagnie pendant vos nuits d'été.", price_per_day: 12, owner:georges)
+batman = Pet.create!(name: "Batman", species:"Mammiphère", description:"Batman est un peu taciturne, et pas très actif en journée. Je pensais avoir acheté une souris sans cheveux, mais je ne regrette pas mon erreur ! Batman ne vous dérangera pas, et vous tiendra compagnie pendant vos nuits d'été.", age: 3, price_per_day: 12, owner:georges)
 file = File.open(Rails.root.join("db/seeds/images/pets/batman.jpg"))
 batman.photo.attach(io:file, filename: "batman.jpg", content_type: "image/jpeg")
 
