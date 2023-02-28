@@ -1,0 +1,44 @@
+.container {
+  right: 20px;
+  top: 32rem;
+  position: absolute;
+}
+
+.avatar-large {
+  width: 50px;
+  height: 50px;
+  right: 16px;
+  top: 16px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+
+}
+
+.pet-photo {
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.flat-show-card {
+  background-color:white;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 2px lightgrey;
+  border-radius: 3px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.brand {
+  color: lightgrey;
+  text-align: left;
+}
+
+body {
+  background-color: #F5F3EC;
+}

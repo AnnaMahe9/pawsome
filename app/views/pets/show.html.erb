@@ -1,0 +1,52 @@
+<div class="pet-photo" style="background-image: url(<%= cl_image_path @pet.photo.key %>)" ></div>
+<div class="container margin-top-negative">
+  <div class="row">
+    <div class= "col-8">
+      <div class= "flat-show-card">
+        <div class="d-flex justify-content-between me-3">
+
+          <div class="d-flex">
+            <h1 class="me-3"><%= @pet.name %></h1><br>
+            <% case @pet.species %>
+            <% when "Poisson" %>
+              <i class="fa-solid fa-fish"></i>
+            <% when "Reptile" %>
+              <i class="fa-solid fa-dragon"></i>
+            <% when "Amphibien" %>
+              <i class="fa-solid fa-frog"></i>
+            <% when "Oiseau" %>
+              <i class="fa-solid fa-feather"></i>
+            <% when "Mammiphère" %>
+              <i class="fa-solid fa-cat"></i>
+            <% when "Insecte" %>
+              <i class="fa-solid fa-mosquito"></i>
+            <% end %>
+          </div>
+          <img src="<%= cl_image_path @pet.owner.photo.key %>" class="avatar-large" alt="avatar-large" />
+        </div>
+        <div class="d-flex justify-content-between">
+          <p><%= @pet.age %> an(s)</p>
+          <p><%= @pet.price_per_day %> € par jour</p>
+        </div>
+      </div>
+      <div class= "flat-show-card">
+      <h2>A propos de mon animal adoré..</h2>
+        <%= @pet.description %><br>
+      </div>
+    </div>
+
+    <%# FORMULAIRE DE RESERVATION %>
+    <div class= "col-4">
+      <div class="flat-show-card">
+        <h5>Réserver cet animal:</h5>
+        <div class="input-group">
+        <%= simple_form_for ([@pet, @booking]) do |f| %>
+          <%= f.input :starts_on, input_html: { name: "Date de début:" } %>
+          <%= f.input :ends_on, name: "Date de fin:"%>
+          <%= f.submit %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

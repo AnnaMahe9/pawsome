@@ -38,7 +38,7 @@ felicia = Pet.create!(name: "Félicia", species: "Reptile", description: "Felici
 file = File.open(Rails.root.join("db/seeds/images/pets/felicia.jpg"))
 felicia.photo.attach(io:file, filename: "felicia.jpg", content_type: "image/jpeg")
 
-ursule = Pet.create!(name:"Ursule", species:"Mammiphères", description:"Ursule est mon rat-taupe nu. C'est une femelle super mignonne. Fun fact, quand je l'ai adopté j'ai d'abord cru que c'était un chat sans poil! Mais je n'ai pas été déçue quand j'ai découvert qu'elle mentait sur son identité, je l'ai quand même adoptée. Je souhaite la mettre à louer car j'ai beaucoup d'animaux imposants à la maison et plus trop de place, je cherche donc à faire de la garde alternée. Merci !", price_per_day:10, age:5, owner: michelle)
+ursule = Pet.create!(name:"Ursule", species:"Mammiphère", description:"Ursule est mon rat-taupe nu. C'est une femelle super mignonne. Fun fact, quand je l'ai adopté j'ai d'abord cru que c'était un chat sans poil! Mais je n'ai pas été déçue quand j'ai découvert qu'elle mentait sur son identité, je l'ai quand même adoptée. Je souhaite la mettre à louer car j'ai beaucoup d'animaux imposants à la maison et plus trop de place, je cherche donc à faire de la garde alternée. Merci !", price_per_day:10, age:5, owner: michelle)
 file = File.open(Rails.root.join("db/seeds/images/pets/ursule.jpg"))
 ursule.photo.attach(io:file, filename: "ursule.jpg", content_type: "image/jpeg")
 
@@ -51,7 +51,7 @@ benedict = Pet.create!(name:"Benedict", species:"Amphibien", description:"Benedi
 file = File.open(Rails.root.join("db/seeds/images/pets/benedict.jpg"))
 benedict.photo.attach(io:file, filename: "benedict.jpg", content_type: "image/jpeg")
 
-batman = Pet.create!(name: "Batman", species:"Mammiphères", description:"Batman est un peu taciturne, et pas très actif en journée. Je pensais avoir acheté une souris sans cheveux, mais je ne regrette pas mon erreur ! Batman ne vous dérangera pas, et vous tiendra compagnie pendant vos nuits d'été.", price_per_day: 12, owner:georges)
+batman = Pet.create!(name: "Batman", species:"Mammiphère", description:"Batman est un peu taciturne, et pas très actif en journée. Je pensais avoir acheté une souris sans cheveux, mais je ne regrette pas mon erreur ! Batman ne vous dérangera pas, et vous tiendra compagnie pendant vos nuits d'été.", price_per_day: 12, owner:georges)
 file = File.open(Rails.root.join("db/seeds/images/pets/batman.jpg"))
 batman.photo.attach(io:file, filename: "batman.jpg", content_type: "image/jpeg")
 
@@ -69,15 +69,15 @@ file = File.open(Rails.root.join("db/seeds/images/pets/leon.png"))
 leon.photo.attach(io:file, filename: "leon.png", content_type: "image/png")
 
 #célina
-fridha = Pet.create!(name: "Fridha Khalo", species: "Reptile", description: "Fridha est une jeune crocodile passionée et débordante de vie. Je l'ai recueillie quand elle avait 6 mois et c'est devenue une adorable petite crocodile. Attention, elle n'aime pas beaucoup les hommes", price_per_day:80, age: 6, owner: celina)
+fridha = Pet.create!(name: "Fridha Khalo", species:"Reptile", description: "Fridha est une jeune crocodile passionée et débordante de vie. Je l'ai recueillie quand elle avait 6 mois et c'est devenue une adorable petite crocodile. Attention, elle n'aime pas beaucoup les hommes", price_per_day:80, age: 6, owner: celina)
 file = File.open(Rails.root.join("db/seeds/images/pets/fridha.jpg"))
 fridha.photo.attach(io:file, filename: "fridha.jpg", content_type: "image/jpeg")
 
-simone = Pet.create!(name: "Simone", species: "Insecte", description: "Simone est ma tarantule. Je l'ai sauvée des mauvais traitements de son ancien humain et depuis, je lui réapprends à faire confiance à l'homme. C'est pourquoi je vous propose de lui montrer de l'amour en la louant pendant quelque temps. Elle est très affectueuse et adore se nicher dans le cou!", price_per_day:45, age: 4, owner: celina)
+simone = Pet.create!(name: "Simone", species:"Insecte", description: "Simone est ma tarantule. Je l'ai sauvée des mauvais traitements de son ancien humain et depuis, je lui réapprends à faire confiance à l'homme. C'est pourquoi je vous propose de lui montrer de l'amour en la louant pendant quelque temps. Elle est très affectueuse et adore se nicher dans le cou!", price_per_day:45, age: 4, owner: celina)
 file = File.open(Rails.root.join("db/seeds/images/pets/simone.jpg"))
 simone.photo.attach(io:file, filename: "simone.jpg", content_type: "image/jpeg")
 
-jerome = Pet.create!(name: "Jérôme", species: "Reptile", description:"J'ai eu Jérôme par un hasard de dingue: ce boa est remonté dans mes toilettes ! Depuis il ne quitte plus ma salle de bain, je cherche donc à le sociabiliser avec d'autres animaux.", price_per_day: 34, age: 4, owner: celina)
+jerome = Pet.create!(name: "Jérôme", species:"Reptile", description:"J'ai eu Jérôme par un hasard de dingue: ce boa est remonté dans mes toilettes ! Depuis il ne quitte plus ma salle de bain, je cherche donc à le sociabiliser avec d'autres animaux.", price_per_day: 34, age: 4, owner: celina)
 file = File.open(Rails.root.join("db/seeds/images/pets/jerome.jpg"))
 jerome.photo.attach(io:file, filename: "jerome.jpg", content_type: "image/jpeg")
 #bookings
