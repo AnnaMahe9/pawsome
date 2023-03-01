@@ -16,8 +16,8 @@
             <div id="infos-booking" class="d-flex align-items-center">
               <i class="calendar fa-regular fa-calendar-days fa-xl me-3"></i>
               <div class="date-booking flex-column">
-                <p>Du <strong><%= booking.starts_on %></strong></p>
-                <p>Au <strong><%= booking.ends_on %></strong></p>
+                <p>Du <strong><%= booking.starts_on.strftime("%d/%m/%y") %></strong></p>
+                <p>Au <strong><%= booking.ends_on.strftime("%d/%m/%y") %></strong></p>
               </div>
             </div>
             <div id="infos-price" class="flex-column">
@@ -38,6 +38,5 @@
         <% end %>
       <% end %>
     </div>
-
   </div>
 </div>
