@@ -1,21 +1,43 @@
 <div class="container container-cards">
   <div class="row">
     <h1>Toutes mes réservations</h1>
-  <div class="col-12">
+
+  <div class="col">
       <% @bookings.each do |booking| %>
+      <%= link_to pet_path(booking.pet), class:"card-link" do %>
         <div class="card-resa d-flex">
           <%= cl_image_tag booking.pet.photo.key, class:"img-card-resa" %>
-
-          <div class="card-infos-resa">
+          <div class="card-infos-resa d-flex justify-content-between align-items-center">
+            <div id="main-infos">
               <h3 class="card-title"> <%= booking.pet.name %> </h3>
-              <p><strong><%= booking.pet.owner.username %></strong></p>
-              <p><em><%= booking.pet.owner.email %></em></p>
-              <p>Du <%= booking.starts_on %></p>
-              <p>Au <%= booking.ends_on %></p>
-              <p><%= booking.total_price %>€</p>
+              <p><em><%= booking.pet.owner.username %></em></p>
+              <p><strong><em><%= booking.pet.owner.email %></strong></em></p>
+            </div>
+            <div id="infos-booking" class="d-flex align-items-center">
+              <i class="calendar fa-regular fa-calendar-days fa-xl me-3"></i>
+              <div class="date-booking flex-column">
+                <p>Du <strong><%= booking.starts_on %></strong></p>
+                <p>Au <strong><%= booking.ends_on %></strong></p>
+              </div>
+            </div>
+            <div id="infos-price" class="flex-column">
+              <p><i class="fa-solid fa-euro-sign"></i> <%= booking.total_price %></p>
+              <div class="icon-status align-self-center">
+                <%case booking.status %>
+                  <% when "En Attente" %>
+                  <i class="fa-regular fa-hourglass-half fa-lg fa-flip" style="--fa-animation-duration: 3s;" ></i>
+                  <% when "Confirmé" %>
+                  <i class="fa-regular fa-thumbs-up fa-lg fa-beat" style="--fa-animation-duration: 2s;"></i>
+                  <% when "Refusé" %>
+                  <i class="fa-regular fa-thumbs-down fa-lg fa-beat-fade" style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075;"></i>
+                <% end %>
+              </div>
+            </div>
           </div>
         </div>
+        <% end %>
       <% end %>
+    </div>
 
   </div>
 </div>
