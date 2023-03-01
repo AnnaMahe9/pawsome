@@ -1,7 +1,7 @@
-<h2>Se connecter</h2>
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6">
+      <h2>Se connecter</h2>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <!-- This div is centered and takes 6 columns -->
       <div class="form-inputs formulaire">
@@ -18,8 +18,7 @@
           <%= f.button :submit, "Log in" %>
         </div>
       <% end %>
+      <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>
-
-<%= render "devise/shared/links" %>

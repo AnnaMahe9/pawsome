@@ -83,7 +83,6 @@ jerome.photo.attach(io:file, filename: "jerome.jpg", content_type: "image/jpeg")
 #bookings
 puts "Creating bookings"
 book_celina = Booking.create!(starts_on: "2023-02-03", ends_on: "2023-02-11", renter: celina, pet: fifi, status: "confirmed", total_price:27)
-book_michelle = Booking.create!(starts_on: "2023-03-17", ends_on: "2023-03-18", renter: michelle, pet: fridha, status: "pending", total_price: 160)
 book_2_michelle = Booking.create!(starts_on: "2022-12-22", ends_on: "2022-12-26", renter: michelle, pet: ludovic, status: "confirmed", total_price: 135)
 book_3_michelle = Booking.create!(starts_on: "2023-06-19", ends_on: "2023-06-25", renter: michelle, pet: fifi, status: "pending", total_price: 21)
 book_2_celina = Booking.create!(starts_on: "2023-01-15", ends_on:"2023-01-18", renter: celina, pet: fifi, status: "declined", total_price: 9)
