@@ -10,12 +10,12 @@
               <h3 class="card-title"> <%= booking.pet.name %> </h3>
               <p><strong><%= booking.pet.owner.username %></strong></p>
               <p><em><%= booking.pet.owner.email %></em></p>
-              <p>Du <%= booking.starts_on %></p>
-              <p>Au <%= booking.ends_on %></p>
-              <p><%= booking.total_price %>€</p>
+              <p>Du <%= booking.starts_on.strftime("%d/%m/%y") %></p>
+              <p>Au <%= booking.ends_on.strftime("%d/%m/%y") %></p>
+              <p><%= booking.total_price %>€ / <%= booking.status %></p>
           </div>
         </div>
       <% end %>
-
+    </div>
   </div>
 </div>
