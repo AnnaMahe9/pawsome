@@ -1,0 +1,57 @@
+.container {
+  right: 20px;
+  top: 32rem;
+  position: absolute;
+}
+
+.pet-photo {
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.back-index {
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  color: $white;
+}
+
+.flat-show-card {
+  background-color:$white;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 2px lightgrey;
+  border-radius: 3px;
+}
+
+.species {
+  margin-top: 12px;
+  margin-left: 5px;
+}
+
+.brand {
+  color: lightgrey;
+  text-align: left;
+}
+
+
+.btn .button_submit{
+  background-color: $black;
+  color: $white;
+
+  &:hover {
+    background-color: $white;
+    color: $black;
+    transition: 0.5s;
+  }
+}
+
+body {
+  background-color: $vanilla;
+}
+
+a {
+  text-decoration: none;
+}
