@@ -1,4 +1,6 @@
-<div class="pet-photo" style="background-image: url(<%= cl_image_path @pet.photo.key %>)" ></div>
+<div class="pet-photo" style="background-image: url(<%= cl_image_path @pet.photo.key %>)" >
+<a href="/pets"><i class="fa-solid fa-circle-left fa-2xl back-index"></i></a>
+</div>
 <div class="container margin-top-negative">
   <div class="row">
     <div class= "col-8">
@@ -7,20 +9,22 @@
 
           <div class="d-flex">
             <h1 class="me-3"><%= @pet.name %></h1><br>
-            <% case @pet.species %>
-            <% when "Poisson" %>
-              <i class="fa-solid fa-fish"></i>
-            <% when "Reptile" %>
-              <i class="fa-solid fa-dragon"></i>
-            <% when "Amphibien" %>
-              <i class="fa-solid fa-frog"></i>
-            <% when "Oiseau" %>
-              <i class="fa-solid fa-feather"></i>
-            <% when "Mammiphère" %>
-              <i class="fa-solid fa-cat"></i>
-            <% when "Insecte" %>
-              <i class="fa-solid fa-mosquito"></i>
-            <% end %>
+            <div class="species">
+              <% case @pet.species %>
+              <% when "Poisson" %>
+                <i class="fa-solid fa-fish fa-xl"></i>
+              <% when "Reptile" %>
+                <i class="fa-solid fa-dragon fa-xl"></i>
+              <% when "Amphibien" %>
+                <i class="fa-solid fa-frog fa-xl"></i>
+              <% when "Oiseau" %>
+                <i class="fa-solid fa-feather fa-xl"></i>
+              <% when "Mammiphère" %>
+                <i class="fa-solid fa-cat fa-xl"></i>
+              <% when "Insecte" %>
+                <i class="fa-solid fa-mosquito fa-xl"></i>
+              <% end %>
+            </div>
           </div>
           <img src="<%= cl_image_path @pet.owner.photo.key %>" class="avatar-large" alt="avatar-large" />
         </div>

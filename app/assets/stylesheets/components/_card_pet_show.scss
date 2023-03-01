@@ -11,6 +11,13 @@
   position: relative;
 }
 
+.back-index {
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  color: $white;
+}
+
 .flat-show-card {
   background-color:$white;
   padding: 20px;
@@ -19,6 +26,10 @@
   border-radius: 3px;
 }
 
+.species {
+  margin-top: 12px;
+  margin-left: 5px;
+}
 
 .brand {
   color: lightgrey;
