@@ -1,0 +1,21 @@
+<div class="container container-cards">
+  <div class="row">
+    <h1>Toutes mes réservations</h1>
+  <div class="col-12">
+      <% @bookings.each do |booking| %>
+        <div class="card-resa d-flex">
+          <%= cl_image_tag booking.pet.photo.key, class:"img-card-resa" %>
+
+          <div class="card-infos-resa">
+              <h3 class="card-title"> <%= booking.pet.name %> </h3>
+              <p><strong><%= booking.pet.owner.username %></strong></p>
+              <p><em><%= booking.pet.owner.email %></em></p>
+              <p>Du <%= booking.starts_on.strftime("%d/%m/%y") %></p>
+              <p>Au <%= booking.ends_on.strftime("%d/%m/%y") %></p>
+              <p><%= booking.total_price %>€ / <%= booking.status %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
