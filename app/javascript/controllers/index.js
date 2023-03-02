@@ -9,6 +9,3 @@ application.register("hello", HelloController)
 
 import ShowPetsController from "./show_pets_controller"
 application.register("show-pets", ShowPetsController)
-
-import HomepageController from "./homepage_controller"
-application.register("homepage", HomepageController)
