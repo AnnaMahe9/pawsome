@@ -9,8 +9,12 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 30px;
   width: 100%;
+  transition: 0.6s
 }
 
+.card-resa:hover {
+  transform: scale(1.05);
+}
 .img-card-resa {
   height: 100%;
   width: 120px;
