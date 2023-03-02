@@ -15,6 +15,27 @@
   border-radius: 3px;
 }
 
+.flat-show-card-bookings {
+  background-color:$white;
+  padding: 20px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 2px lightgrey;
+  border-radius: 3px;
+  width: 500px;
+  height: 350px;
+}
+
+.flat-show-card-description {
+  background-color:$white;
+  padding: 20px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 2px lightgrey;
+  border-radius: 3px;
+  height: 205px;
+}
+
 .pet-photo {
   height: 500px;
   width: 100%;
@@ -34,6 +55,9 @@
       color: $orange;
       transition: 0.5s;
     }
+}
+.total {
+  color:$black;
 }
 
 .species {
