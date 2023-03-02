@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :pets, only: [:index, :show] do
     resources :bookings, only: [:create]
   end
+  resources :bookings, only: [:index]
 
   #owner
   namespace :owner do

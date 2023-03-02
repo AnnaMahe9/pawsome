@@ -1,0 +1,36 @@
+.container-cards h1 {
+  text-align: center;
+}
+
+.card-resa {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 30px;
+  width: 100%;
+}
+
+.img-card-resa {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-resa h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-resa p {
+  font-size: 12px;
+  line-height: 0.75;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+
+.card-resa .card-infos-resa {
+  padding: 10px;
+}
