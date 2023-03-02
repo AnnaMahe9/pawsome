@@ -1,14 +1,14 @@
-<div class="container col-12 col-lg-6 form-container">
+<div class="container col-12 col-lg-5 form-container justify-content-center">
   <h1>Ajoutez ici votre star adorée</h1>
   <div class="form">
     <%= simple_form_for([:owner, @pet]) do |f| %>
     <%= f.input :name, label:"Nom" %>
-    <%= f.input :species, label:"Espèce" %>
+    <%= f.input :species, collection:["Amphibien", "Insecte", "Mammifère", "Oiseau", "Poisson", "Reptile"], label:"Espèce" %>
     <%= f.input :age, label:"Âge" %>
     <%= f.input :description %>
     <%= f.input :price_per_day, label:"Prix par jour" %>
     <%= f.input :photo, as: :file %>
-    <%= f.submit %>
+    <%= f.submit "Ajouter", class: "btn button d-grid col-4 mx-auto" %>
     <% end %>
   </div>
 </div>
