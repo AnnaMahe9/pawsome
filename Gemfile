@@ -22,6 +22,7 @@ gem "cloudinary"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "devise"
+gem "pg_search"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
