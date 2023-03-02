@@ -85,7 +85,7 @@ puts "Creating bookings"
 
 book_celina = Booking.create!(starts_on: "2023-02-03", ends_on: "2023-02-11", renter: celina, pet: fifi, status: "Confirmé", total_price:27)
 book_2_michelle = Booking.create!(starts_on: "2022-12-22", ends_on: "2022-12-26", renter: michelle, pet: ludovic, status: "Confirmé", total_price: 135)
-book_3_michelle = Booking.create!(starts_on: "2023-06-19", ends_on: "2023-06-25", renter: michelle, pet: fifi, status: "En attente...", total_price: 21)
+book_3_michelle = Booking.create!(starts_on: "2023-06-19", ends_on: "2023-06-25", renter: michelle, pet: fifi, status: "En Attente", total_price: 21)
 book_2_celina = Booking.create!(starts_on: "2023-01-15", ends_on:"2023-01-18", renter: celina, pet: fifi, status: "Refusé", total_price: 9)
 book_archibald = Booking.create!(starts_on: "2023-02-02", ends_on:"2023-02-05", renter: archibald, pet: benedict, status: "Confirmé", total_price:75)
 

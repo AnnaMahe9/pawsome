@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
     @pet = Pet.find(params[:pet_id])
     @booking = Booking.new(params_booking)
     @booking.pet = @pet
-    @booking.status = "En attente"
+    @booking.status = "En Attente"
       @booking.renter = current_user
     @booking.total_price = @pet.price_per_day * (@booking.ends_on - @booking.starts_on)
 

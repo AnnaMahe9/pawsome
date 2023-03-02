@@ -20,6 +20,5 @@ export default class extends Controller {
     } else {
       this.totalTarget.innerHTML = `${number_days} jours x ${price}€ par jour = <strong>${number_days * price}€</strong>`;
     }
-
   }
 }
