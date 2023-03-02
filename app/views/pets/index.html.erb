@@ -3,6 +3,15 @@
   <h1 class="mt-5">Tous nos précieux animaux 🦖</h1>
   <h5>Choisissez l'animal qui fera chavirer votre coeur... pour quelques jours !</h5>
 
+  <%= form_with url: pets_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Cherchez votre animal..."
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
   <div class="cards-grid-list mt-5 mb-5">
 
     <% @pets.each do |pet| %>

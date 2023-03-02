@@ -82,6 +82,7 @@ file = File.open(Rails.root.join("db/seeds/images/pets/jerome.jpg"))
 jerome.photo.attach(io:file, filename: "jerome.jpg", content_type: "image/jpeg")
 #bookings
 puts "Creating bookings"
+
 book_celina = Booking.create!(starts_on: "2023-02-03", ends_on: "2023-02-11", renter: celina, pet: fifi, status: "Confirmé", total_price:27)
 book_2_michelle = Booking.create!(starts_on: "2022-12-22", ends_on: "2022-12-26", renter: michelle, pet: ludovic, status: "Confirmé", total_price: 135)
 book_3_michelle = Booking.create!(starts_on: "2023-06-19", ends_on: "2023-06-25", renter: michelle, pet: fifi, status: "En Attente", total_price: 21)

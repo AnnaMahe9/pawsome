@@ -4,16 +4,17 @@
   padding: 10px 30px 30px 30px;
 }
 
-.paragraph {
-  text-align: justify;
-}
-
 .title-info {
-  padding-left: 80px;
+text-align: left;
 }
 
 .main-title {
   font-family: 'Playfair Display', serif;
   font-size: 50px;
   letter-spacing: 1px;
+}
+
+.second-title {
+  text-align: center;
+  margin-bottom: 50px;
 }

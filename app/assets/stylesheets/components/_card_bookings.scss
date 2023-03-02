@@ -13,6 +13,7 @@
   border-radius: 10px;
   margin-bottom: 30px;
   width: 100%;
+  transition: 0.6s
 }
 
 .card-resa .card-infos-resa {
@@ -20,6 +21,10 @@
   width: 100%;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.card-resa:hover {
+  transform: scale(1.05);
 }
 
 .img-card-resa {
