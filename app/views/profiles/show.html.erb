@@ -1,44 +1,42 @@
-<h1 class="m-5 mt-3 mb-0">Mon profil</h1>
+<div class="general-container">
+  <h1 class="m-5 mt-3 mb-0">Mon profil</h1>
 
-<div class="container py-3">
-  <div class="row">
-    <div class="col-md-2">
-      <p><%= cl_image_tag @user.photo.key, class:"image-profile-large m-5 mt-3 mb-0 mr-0"%></p>
-    </div>
-    <div class="col-md-9 mt-4">
-      <h2><%= @user.username.capitalize %></h2>
-      <h5 id="e-mail-profile"><%= @user.email.capitalize%></h5>
-    </div>
-    <div class="col-md-1 mt-4 ml-5">
-      <%# <p class="btn btn-primary">Modifier</p> %>
-    </div>
+  <div class="container py-3">
+    <div class="row">
+      <div class="col-md-2">
+        <p><%= cl_image_tag @user.photo.key, class:"image-profile-large m-5 mt-3 mb-0 mr-0"%></p>
+      </div>
+      <div class="col-md-9 mt-4">
+        <h2><%= @user.username.capitalize %></h2>
+        <h5 id="e-mail-profile"><%= @user.email.capitalize%></h5>
+      </div>
+      <div class="col-md-1 mt-4 ml-5">
+        <%# <p class="btn btn-primary">Modifier</p> %>
+      </div>
+      </div>
     </div>
   </div>
-</div>
-
-<div  class= "container">
-<div class="row">
-<div class= "container p-3 col-md-6">
-
-      <h3 class="d-flex justify-content-center">Mes animaux reservés 🦧</h3>
-      <% if @bookings.nil? %>
-      <p>Pas de réservation</p>
-      <% else %>
-        <% @bookings.each do |booking| %>
-          <div class="card-profile-booking mt-4">
-          <%= cl_image_tag booking.pet.photo.key, height: 152, width: 152, crop: :fill %>
-          <div class="card-profile-booking-infos">
-          <h2><%= booking.pet.name.capitalize %></h2>
-          <p>Du <%= booking.starts_on.strftime("%d/%m/%Y") %>
-          <p>Au <%= booking.ends_on.strftime("%d/%m/%Y") %>
-          </div>
-          </div>
+  <div class= "container">
+    <div class="row d-flex flex-row">
+      <div class= "container p-3 col-md-6">
+        <h3 class="d-flex justify-content-center">Mes animaux reservés 🦧</h3>
+        <% if @bookings.empty? %>
+          <p>Pas de réservation</p>
+        <% else %>
+          <% @bookings.each do |booking| %>
+            <div class="card-profile-booking mt-4">
+              <%= cl_image_tag booking.pet.photo.key, height: 152, width: 152, crop: :fill %>
+              <div class="card-profile-booking-infos">
+                <h2><%= booking.pet.name.capitalize %></h2>
+                <p>Du <%= booking.starts_on.strftime("%d/%m/%Y") %>
+                <p>Au <%= booking.ends_on.strftime("%d/%m/%Y") %>
+              </div>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
-</div>
+      </div>
 
-<div class= "container p-3 col-md-6">
-
+    <div class= "container p-3 col-md-6">
       <h3 class="d-flex justify-content-center">Mes réservations 🦣</h3>
       <% @user.bookings.each do |booking| %>
         <div class="card-profile-booking mt-4">
@@ -47,31 +45,31 @@
             <h2><%= booking.pet.name.capitalize %></h2>
             <p>Du <%= booking.starts_on.strftime("%d/%m/%Y") %></p>
             <p>Au <%= booking.ends_on.strftime("%d/%m/%Y") %></p>
-        </div>
-      </div>
-      <% end %>
-    </div>
-</div>
-</div>
-
-<div class="container p-3">
-
-      <h3 class="d-flex justify-content-center mt-4">Mes animaux 🥰</h3>
-      <div class="d-flex">
-        <% @pets.each do |pet| %>
-          <%= link_to pet_path(pet), class:"card-link" do %>
-        <div class="card-profile-list mt-4 mb-4">
-          <p><%= cl_image_tag pet.photo.key, width: 354, height: 150, crop: :fill%></p>
-          <div class="card-profile-infos">
-            <div>
-              <h2><%= pet.name %></h2>
-              <p><%= pet.species %></p>
-            </div>
-              <h2 class="card-profile-pricing"><%= pet.price_per_day %> €/jour</h2>
-            </div>
           </div>
-          <% end %>
-        <% end %>
         </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
+  <div class="container p-3">
+
+        <h3 class="d-flex justify-content-center mt-4">Mes animaux 🥰</h3>
+        <div class="d-flex justify-content-center">
+          <% @pets.each do |pet| %>
+            <%= link_to pet_path(pet), class:"card-link" do %>
+          <div class="card-profile-list mt-4 mb-4">
+            <p><%= cl_image_tag pet.photo.key, width: 354, height: 150, crop: :fill%></p>
+            <div class="card-profile-infos">
+              <div>
+                <h2><%= pet.name %></h2>
+                <p><%= pet.species %></p>
+              </div>
+                <h2 class="card-profile-pricing"><%= pet.price_per_day %> €/jour</h2>
+              </div>
+            </div>
+            <% end %>
+          <% end %>
+          </div>
+  </div>
 </div>
