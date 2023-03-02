@@ -28,7 +28,7 @@
             <%= pet.species %>
           </div>
           <div class="card-text d-flex justify-content-between">
-            <%= pet.age %> an(s)
+            <%= pet.age %> <%= pet.age > 1 ? 'an'.pluralize : 'an' %>
           <div class="d-flex flex-row-reverse"><%= pet.price_per_day %> €/jour </div>
           </div>
         </div>

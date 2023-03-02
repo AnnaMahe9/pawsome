@@ -1,8 +1,8 @@
-
-
-.container-cards h1 {
+.style-title {
   text-align: center;
   padding-top: 30px;
+  color: $green;
+  margin-bottom: 30px;
 }
 
 .card-resa {
@@ -11,8 +11,15 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
-  margin: 30px;
+  margin-bottom: 30px;
   width: 100%;
+}
+
+.card-resa .card-infos-resa {
+  padding: 10px;
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .img-card-resa {
@@ -48,17 +55,13 @@
   .calendar {
     color: $orange;
   }
+}
 
+.price {
+  font-size: 42px;
 }
 
 .icon-status{
   margin-top: 7px;
   color: $orange;
-}
-
-.card-resa .card-infos-resa {
-  padding: 10px;
-  width: 100%;
-  margin-left: 20px;
-  margin-right: 20px;
 }
