@@ -13,8 +13,18 @@
   margin-bottom: 20px;
   box-shadow: 1px 1px 2px lightgrey;
   border-radius: 3px;
+
 }
 
+.info-user{
+  font-size: 13px;
+  color: $green;
+  margin: 0px;
+  .mail {
+    font-size: 12px;
+    color: $shadow-gray;
+  }
+}
 .flat-show-card-bookings {
   background-color:$white;
   padding: 20px;
@@ -23,7 +33,15 @@
   box-shadow: 1px 1px 2px lightgrey;
   border-radius: 3px;
   width: 500px;
-  height: 350px;
+
+  h3{
+    color:$orange;
+  }
+}
+
+.total {
+  font-size: 25px;
+  color:$orange;
 }
 
 .flat-show-card-description {
@@ -33,13 +51,24 @@
   margin-bottom: 20px;
   box-shadow: 1px 1px 2px lightgrey;
   border-radius: 3px;
-  height: 205px;
+
+  h2{
+    color:$green;
+  }
+  h3{
+    color:$green;
+  }
+}
+
+.total-price {
+  font-size: 25px;
+  color:$green;
 }
 
 .pet-photo {
   height: 500px;
   width: 100%;
-  background-position: center;
+  background-position: 50% 35%;
   background-size: cover;
   position: absolute;
   z-index: -2;
@@ -51,18 +80,19 @@
   top: 40px;
   color: $white;
   z-index: 10;
+
     &:hover {
       color: $orange;
       transition: 0.5s;
     }
 }
-.total {
-  color:$black;
-}
 
 .species {
   margin-top: 12px;
   margin-left: 5px;
+  h1 {
+    color:$green;
+  }
 }
 
 .brand {
@@ -70,10 +100,35 @@
   text-align: left;
 }
 
-.button {
-  color: $white;
-  background-color: $orange;
-  border-radius: 5px;
+.button-42 {
+  background-color: initial;
+  background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 100%;
+  z-index: 9;
+  border: 0;
+  transition: box-shadow .2s;
+  .button-42:hover {
+    box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+  }
 }
 
 body {

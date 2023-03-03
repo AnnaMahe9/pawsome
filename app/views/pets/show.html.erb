@@ -13,9 +13,9 @@
         <div class= "flat-show-card">
           <div class="d-flex justify-content-between me-3">
 
-            <div class="d-flex">
-              <h1 class="me-3"><%= @pet.name %></h1><br>
-              <div class="species">
+            <div class="d-flex flex-column">
+              <div class="species d-flex align-items-center">
+                <h1 class="me-3"><%= @pet.name %></h1><br>
                 <% case @pet.species %>
                 <% when "Poisson" %>
                   <i class="fa-solid fa-fish fa-xl"></i>
@@ -31,39 +31,41 @@
                   <i class="fa-solid fa-mosquito fa-xl"></i>
                 <% end %>
               </div>
+                <p><%=@pet.age%> <%= @pet.age > 1 ? 'an'.pluralize : 'an' %> </p>
             </div>
 
-            <img src="<%= cl_image_path @pet.owner.photo.key %>" class="avatar-large" alt="avatar-large" />
+            <div class="d-flex flex-column justify-content-center align-items-end">
+              <img src="<%= cl_image_path @pet.owner.photo.key %>" class="avatar-large" alt="avatar-large" />
+              <div class="flex-column text-end mt-2 info-user align-items-center">
+                <p><%= @pet.name %> appartient à <strong><%= @pet.owner.username %></strong><br>
+                <em class="mail mt-0"><%= @pet.owner.email %></p></em>
+              </div>
+            </div>
           </div>
 
-          <div class="d-flex justify-content-between">
-            <p><%=@pet.age%> <%= @pet.age > 1 ? 'an'.pluralize : 'an' %> </p>
-            <p><%= @pet.price_per_day %>€ par jour</p>
-          </div>
+
 
         </div>
 
-        <div class= "flat-show-card-description">
+        <div class= "d-flex flex-column flat-show-card-description">
           <h2>A propos de mon animal adoré..</h2>
           <%= @pet.description %><br>
+          <div class="total-price text-end"><strong><%= @pet.price_per_day %>€</strong> par jour</div>
         </div>
 
       </div>
 
       <div class= "col-4 d-flex">
         <div class="flat-show-card-bookings">
-          <h4>Réserver cet animal</h4>
+          <h3 class="text-center">Réserver cet animal</h3>
           <div class="input-group justif-content-center flex-column" >
             <%= simple_form_for [@pet, @booking] do |f| %>
-              <%= f.input :starts_on, label: "Date de début", html5: true, input_html: {data: {show_pets_target: "start", action:"input->show-pets#calculate"}}%>
-              <%= f.input :ends_on, label: "Date de fin", html5: true, input_html: {data: {show_pets_target: "end",action:"input->show-pets#calculate"}}%>
-              <%= f.submit "Confirmer", class: "btn button d-grid col-6 mx-auto" %>
+              <%= f.input :starts_on, label: "Du", html5: true, input_html: {data: {show_pets_target: "start", action:"input->show-pets#calculate"}}%>
+              <%= f.input :ends_on, label: "Au", html5: true, input_html: {data: {show_pets_target: "end",action:"input->show-pets#calculate"}}%>
+              <%= f.submit "Confirmer", class: "btn button-42 d-grid col-6 mx-auto" %>
               <%# TODO later = Si on a le temps, il faudrait voir pour installer Flatpicker (cf kitt:library) %>
             <% end %>
-            <div class="d-flex flex-column align-item-center m-2">
-              <h5>Total</h5>
-              <p data-show-pets-target="total"></p>
-            </div>
+                <p class="total-js" data-show-pets-target="total"></p>
           </div>
         </div>
       </div>

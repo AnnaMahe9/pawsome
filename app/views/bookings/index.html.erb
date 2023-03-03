@@ -21,15 +21,15 @@
               </div>
             </div>
             <div id="infos-price" class="flex-column">
-              <p class="price"><i class="fa-solid fa-euro-sign"></i> <%= booking.total_price %></p>
-              <div class="icon-status align-self-center">
+              <p id="price"><i class="fa-solid fa-euro-sign"></i> <%= booking.total_price %></p>
+              <div class="icon-status justify-content-center mt-4 ms-2">
                 <%case booking.status %>
                   <% when "En Attente" %>
-                  <i class="fa-regular fa-hourglass-half fa-lg fa-flip" style="--fa-animation-duration: 3s;" ></i>
+                  <i class="fa-regular fa-hourglass-half fa-2xl fa-flip" style="--fa-animation-duration: 3s;" ></i>
                   <% when "Confirmé" %>
-                  <i class="fa-regular fa-thumbs-up fa-lg fa-beat" style="--fa-animation-duration: 2s;"></i>
+                  <i class="fa-regular fa-thumbs-up fa-2xl fa-beat" style="--fa-animation-duration: 2s;"></i>
                   <% when "Refusé" %>
-                  <i class="fa-regular fa-thumbs-down fa-lg fa-beat-fade" style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075;"></i>
+                  <i class="fa-regular fa-thumbs-down fa-2xl fa-beat-fade" style="--fa-beat-fade-opacity: 0.67; --fa-beat-fade-scale: 1.075;"></i>
                 <% end %>
               </div>
             </div>
