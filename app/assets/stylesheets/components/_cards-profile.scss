@@ -1,3 +1,12 @@
+.color-white {
+  color:white;
+  border-radius: 10px;
+}
+
+#text-bigger {
+  font-size: 20px;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));

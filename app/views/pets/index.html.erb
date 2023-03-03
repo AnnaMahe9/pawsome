@@ -1,16 +1,18 @@
 <div class="index-container">
 
-  <h1 class="mt-5">Tous nos précieux animaux 🦖</h1>
+  <h1 class="mt-5 title-green">Tous nos précieux animaux 🦖</h1>
   <h5>Choisissez l'animal qui fera chavirer votre coeur... pour quelques jours !</h5>
 
-  <%= form_with url: pets_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Cherchez votre animal..."
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+  <div class="mt-5 mb-5">
+    <%= form_with url: pets_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Cherchez votre animal..."
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary", id: "color-white" %>
+    <% end %>
+  </div>
 
   <div class="cards-grid-list mt-5 mb-5">
 
@@ -21,13 +23,13 @@
           <% if pet.photo.attached? %>
             <%= cl_image_tag pet.photo.key, id:"img-pet-list"%>
           <% else %>
-            <p>No photo<p>
+            <p class="text-center">No photo<p>
           <% end %>
         </div>
 
         <div class="card-body">
           <div class="card-text d-flex justify-content-between">
-            <h3 class="card-title"> <%= pet.name %> </h3>
+            <h3 class="card-title color-orange"> <%= pet.name %> </h3>
             <div class="card-text d-flex justify-content-between">
               <%= cl_image_tag pet.owner.photo.key, id:"img-user-list"%>
             </div>
@@ -38,7 +40,7 @@
           </div>
           <div class="card-text d-flex justify-content-between">
             <%= pet.age %> <%= pet.age > 1 ? 'an'.pluralize : 'an' %>
-          <div class="d-flex flex-row-reverse"><%= pet.price_per_day %> €/jour </div>
+          <div class="d-flex flex-row-reverse big-price"><%= pet.price_per_day %> €/Jour </div>
           </div>
         </div>
       </div>
