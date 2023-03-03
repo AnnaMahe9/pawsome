@@ -22,7 +22,7 @@ class Owner::PetsController < ApplicationController
     @user = current_user
     @pet = Pet.find(params[:id])
     @pet.update(params_pet)
-    redirect_to profile_path
+    redirect_to pet_path(@pet)
   end
 
   private
