@@ -5,9 +5,9 @@ import Typed from 'typed.js'
 export default class extends Controller {
   connect() {
     typed = new Typed('.element', {
-      strings: ["Envie d'exotisme dans votre vie ?", "Louez vos animaux entre amateurs passionnés"],
+      strings: ["Envie d'exotisme dans votre vie ?", "Louez vos animaux entre amateurs passionnés !"],
       typeSpeed: 30,
-      backSpeed: 10,
+      backSpeed: 20,
       loop: true
     });
   }
