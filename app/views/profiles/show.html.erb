@@ -1,5 +1,5 @@
 <div class="general-container">
-  <h1 class="m-5 mt-3 mb-0">Mon profil</h1>
+  <h1 class="m-5 mt-3 mb-0 title-green">Mon profil</h1>
 
   <div class="container py-3">
     <div class="row">
@@ -21,16 +21,38 @@
       <div class= "container p-3 col-md-6">
         <h3 class="d-flex justify-content-center">Mes animaux reservés 🦧</h3>
         <% if @bookings.empty? %>
-          <p>Pas de réservation</p>
+        <p class="d-flex justify-content-center mt-3">Vos animaux n'ont pas trop de succès...</p>
+        <div class="btn-add-animal d-flex justify-content-center mt-4">
+          <%= link_to new_owner_pet_path, class:"card-link" do %>
+          <div class="card-profile-list text-center" style="width: 15rem;">
+            <div class="card-profile-infos justify-content-center">
+              <p class="card-text m-4" id="text-bigger">Ajouter une nouvelle star 🦃</p>
+            </div>
+          </div>
+          <% end %>
+        </div>
         <% else %>
           <% @bookings.each do |booking| %>
             <div class="card-profile-booking mt-4">
               <%= cl_image_tag booking.pet.photo.key, height: 152, width: 152, crop: :fill %>
-              <div class="card-profile-booking-infos">
-                <h2><%= booking.pet.name.capitalize %></h2>
+
+             <div class="card-profile-right ">
+              <div class="card-profile-booking-infos ms-4">
+                <h2 class="color-orange"><%= booking.pet.name.capitalize %></h2>
                 <p>Du <%= booking.starts_on.strftime("%d/%m/%Y") %>
                 <p>Au <%= booking.ends_on.strftime("%d/%m/%Y") %>
               </div>
+              <div class="choice-buttons">
+                <% if booking.status == "Confirmé" %>
+                  <%= link_to 'Confirmé', accept_owner_booking_path(booking), class: "confirmation text-center", data: { turbo_method: :patch} %>
+                <% elsif booking.status == "Refusé" %>
+                  <%= link_to 'Décliné', decline_owner_booking_path(booking), class: "refus text-center", data: { turbo_method: :patch} %>
+                <% else  %>
+                  <%= link_to 'Confirmer', accept_owner_booking_path(booking), class: "confirmation text-center", data: { turbo_method: :patch} %>
+                  <%= link_to 'Décliner', decline_owner_booking_path(booking), class: "refus text-center", data: { turbo_method: :patch} %>
+                <%end %>
+              </div>
+           </div>
             </div>
           <% end %>
         <% end %>
@@ -39,14 +61,16 @@
     <div class= "container p-3 col-md-6">
       <h3 class="d-flex justify-content-center">Mes réservations 🦣</h3>
       <% @user.bookings.each do |booking| %>
-        <div class="card-profile-booking mt-4">
+      <%= link_to bookings_path, class:"card-link" do %>
+        <div class="card-profile-booking mt-4 card-link">
           <%= cl_image_tag booking.pet.photo.key, height: 152, width: 152, crop: :fill %>
-          <div class="card-profile-booking-infos">
-            <h2><%= booking.pet.name.capitalize %></h2>
+          <div class="card-profile-booking-infos ms-4">
+            <h2 class="color-orange"><%= booking.pet.name.capitalize %></h2>
             <p>Du <%= booking.starts_on.strftime("%d/%m/%Y") %></p>
             <p>Au <%= booking.ends_on.strftime("%d/%m/%Y") %></p>
           </div>
         </div>
+        <% end %>
         <% end %>
       </div>
     </div>
@@ -54,15 +78,19 @@
 
   <div class="container p-3">
 
-        <h3 class="d-flex justify-content-center mt-4">Mes animaux 🥰</h3>
+        <div class="d-flex justify-content-center mt-4">
+        <h3>Mes animaux 🥰</h3>
+        <h4><%= link_to "Ajouter une star", new_owner_pet_path, class:"btn btn-primary color-white ms-5"%></h4>
+        </div>
+
         <div class="d-flex justify-content-center">
           <% @pets.each do |pet| %>
-            <%= link_to pet_path(pet), class:"card-link" do %>
+            <%= link_to edit_owner_pet_path(pet), class:"card-link" do %>
           <div class="card-profile-list mt-4 mb-4">
             <p><%= cl_image_tag pet.photo.key, width: 354, height: 150, crop: :fill%></p>
             <div class="card-profile-infos">
               <div>
-                <h2><%= pet.name %></h2>
+                <h2 class="color-orange"><%= pet.name %></h2>
                 <p><%= pet.species %></p>
               </div>
                 <h2 class="card-profile-pricing"><%= pet.price_per_day %> €/jour</h2>

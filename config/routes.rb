@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   #owner
   namespace :owner do
-    resources :pets, only: [:new, :create, :edit]
+    resources :pets, only: [:new, :create, :edit, :update]
     resources :bookings, only: [] do
       member do
         patch :accept
