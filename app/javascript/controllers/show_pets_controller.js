@@ -18,7 +18,7 @@ export default class extends Controller {
     if (this.startTarget.value === "" || this.endTarget.value === "") {
       this.totalTarget.innerHTML = `<div class="d-grid col-12 justify-content-center mt-5"><i class="fa-solid fa-spinner fa-2xl fa-spin"></i></div>` ;
     } else {
-      this.totalTarget.innerHTML = `<div class="d-flex justify-content-between mt-4">Nombre de jour <div>${number_days}</div></div> <div class="d-flex justify-content-between">Prix par jour <div>${price}€</div></div> <br> <div class="d-flex justify-content-between total">TOTAL <div><strong>${number_days * price}€</strong></div></div>`;
+      this.totalTarget.innerHTML = `<div class="d-flex justify-content-between mt-4">Nombre de jours <div>${number_days}</div></div> <div class="d-flex justify-content-between">Prix par jour <div>${price}€</div></div> <br> <div class="d-flex justify-content-between total">TOTAL <div><strong>${number_days * price}€</strong></div></div>`;
     }
   }
 }
