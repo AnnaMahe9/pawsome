@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import ShowPetsController from "./show_pets_controller"
 application.register("show-pets", ShowPetsController)
+
+import TypedController from "./typed_controller"
+application.register("typed", TypedController)
