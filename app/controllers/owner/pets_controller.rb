@@ -6,7 +6,7 @@ class Owner::PetsController < ApplicationController
   def create
     @pet = Pet.new(list_params)
     @pet.owner = current_user
-    
+
     if @pet.save
       redirect_to pet_path(@pet)
     else

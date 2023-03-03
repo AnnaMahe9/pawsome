@@ -62,14 +62,6 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
-}
-
-.card-profile-infos .card-profile-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
 }
 
 .image-profile-large {
@@ -80,7 +72,6 @@
 
 .card-profile-booking {
   overflow: hidden;
-  height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -108,11 +99,34 @@
   margin-top: 8px;
 }
 
-.card-profile-booking .card-profile-booking-infos {
-  padding: 16px;
-}
+// .card-profile-booking-infos {
+//   width: 100%;
+// }
 
 #e-mail-profile {
   color: grey;
   font-weight: 100;
+}
+
+.confirmation, .refus {
+  color:$white;
+  font-weight: 8px;
+  margin: 10px;
+  border-radius: 5%;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px;
+  transition:0.6s;
+    &:hover {
+      color:$white;
+      font-weight: 10px;
+    }
+  }
+
+.confirmation {
+  background-color: $green;
+}
+
+.refus {
+  background-color: $red;
 }

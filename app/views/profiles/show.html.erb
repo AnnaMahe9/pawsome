@@ -26,11 +26,21 @@
           <% @bookings.each do |booking| %>
             <div class="card-profile-booking mt-4">
               <%= cl_image_tag booking.pet.photo.key, height: 152, width: 152, crop: :fill %>
-              <div class="card-profile-booking-infos">
+              <div class="card-profile-booking-infos ms-4">
                 <h2><%= booking.pet.name.capitalize %></h2>
                 <p>Du <%= booking.starts_on.strftime("%d/%m/%Y") %>
                 <p>Au <%= booking.ends_on.strftime("%d/%m/%Y") %>
               </div>
+            <div class="buttons d-flex">
+              <% if booking.status == "Confirmé" %>
+                <%= link_to 'Confirmé', accept_owner_booking_path(booking), class: "confirmation text-center align-items-end justify-content-end", data: { turbo_method: :patch} %>
+              <% elsif booking.status == "Refusé" %>
+                <%= link_to 'Décliné', decline_owner_booking_path(booking), class: "refus text-center align-items-end justify-content-end", data: { turbo_method: :patch} %>
+              <% else  %>
+                <%= link_to 'Confirmer', accept_owner_booking_path(booking), class: "confirmation text-center align-items-end justify-content-end", data: { turbo_method: :patch} %>
+                <%= link_to 'Décliner', decline_owner_booking_path(booking), class: "refus text-center align-items-end justify-content-end", data: { turbo_method: :patch} %>
+              <%end %>
+            </div>
             </div>
           <% end %>
         <% end %>
@@ -41,7 +51,7 @@
       <% @user.bookings.each do |booking| %>
         <div class="card-profile-booking mt-4">
           <%= cl_image_tag booking.pet.photo.key, height: 152, width: 152, crop: :fill %>
-          <div class="card-profile-booking-infos">
+          <div class="card-profile-booking-infos ms-4">
             <h2><%= booking.pet.name.capitalize %></h2>
             <p>Du <%= booking.starts_on.strftime("%d/%m/%Y") %></p>
             <p>Au <%= booking.ends_on.strftime("%d/%m/%Y") %></p>
