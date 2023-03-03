@@ -71,14 +71,6 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
-}
-
-.card-profile-infos .card-profile-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
 }
 
 .image-profile-large {
@@ -88,13 +80,21 @@
 }
 
 .card-profile-booking {
+  width: 100%;
   overflow: hidden;
-  height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   border-radius: 15px;
+}
+
+.card-profile-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 121px;
 }
 
 .card-profile-booking img {
@@ -117,11 +117,86 @@
   margin-top: 8px;
 }
 
-.card-profile-booking .card-profile-booking-infos {
-  padding: 16px;
-}
-
 #e-mail-profile {
   color: grey;
   font-weight: 100;
+}
+
+.choice-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-top: 60px;
+  padding-right: 15px;
+}
+
+.confirmation, .refus {
+  height: 100%;
+  color:$white;
+  margin: 10px;
+  border-radius: 5%;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px;
+  transition:0.8s;
+    &:hover {
+      color:$white;
+    }
+  }
+
+.confirmation {
+  background-color: $green;
+  background-image: linear-gradient(-180deg, #49c237, $green);
+  border-radius: 5%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+  height: 30px;
+  line-height: 30px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 100%;
+  z-index: 9;
+  border: 0;
+  transition: box-shadow .2s;
+}
+
+.refus {
+  background-color: $red;
+  background-color: $green;
+  background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+  border-radius: 5%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+  height: 30px;
+  line-height: 30px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 100%;
+  z-index: 9;
+  border: 0;
+  transition: box-shadow .2s;
 }
