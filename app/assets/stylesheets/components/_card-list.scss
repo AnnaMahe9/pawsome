@@ -1,11 +1,13 @@
+.title-green {
+  color:$green;
+}
+
 .index-container {
   margin-left: 150px;
   margin-right: 150px;
 }
 
 #cards-list {
-  // background-size: cover;
-  // background-position: center;
   display: flex;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 10px;
@@ -21,10 +23,15 @@
 
 .card-link:hover {
   transform: scale(1.05);
+  color: $orange;
 }
 
-.card-link:hover {
-  color: $orange;
+.color-orange {
+  color:$orange;
+}
+
+.big-price {
+  font-size: 25px;
 }
 
 .cards-grid-list {
